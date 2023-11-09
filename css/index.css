@@ -11,6 +11,7 @@
 }
 .scroll-section {
   position: relative;
+  background-color: transparent;
 }
 .fixed-box {
   top: 0;

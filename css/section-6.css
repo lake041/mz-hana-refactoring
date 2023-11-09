@@ -1,3 +1,11 @@
+.card-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+}
 .home-card-3 {
   top: 20vh;
   text-align: center;

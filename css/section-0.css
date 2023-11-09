@@ -39,7 +39,6 @@
 #s0-message-box-4 {
   top: 55vh;
 }
-
 @media (min-width: 1025px) {
   #s0-message-0 {
     font-size: 6rem;
@@ -51,7 +50,6 @@
     font-size: 5rem;
   }
 }
-
 @media (max-width: 1024px) {
   #s0-message-0 {
     font-size: 5rem;
@@ -63,7 +61,6 @@
     font-size: 4rem;
   }
 }
-
 @media (max-width: 640px) {
   #s0-message-0 {
     font-size: 4rem;

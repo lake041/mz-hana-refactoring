@@ -88,10 +88,10 @@
       objs: {
         k: document.querySelector(".container"),
         container: document.querySelector("#scroll-section-3"),
-        z: document.querySelector("#scroll-section-3 .card-message.z"),
-        a: document.querySelector("#scroll-section-3 .card-message.a"),
-        b: document.querySelector("#scroll-section-3 .card-message.b"),
-        c: document.querySelector("#scroll-section-3 .card-message.c"),
+        z: document.querySelector("#s3-card-box-0"),
+        a: document.querySelector("#s3-card-box-1"),
+        b: document.querySelector("#s3-card-box-2"),
+        c: document.querySelector("#s3-card-box-3"),
       },
       values: {
         z_opacity: [0, 1, { start: 0, end: 0.05 }, 1, 0, { start: 0.2, end: 0.22 }],

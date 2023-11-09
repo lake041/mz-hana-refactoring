@@ -38,19 +38,14 @@ invisible {
 .s2-display-none {
   display: none;
 }
-
-@media (max-width: 640px) {
-  .s2-display-none {
-    display: flex;
-  }
+@media (min-width: 1025px) {
   #s2-message-0,
   #s2-message-1,
   #s2-message-2 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 900;
   }
 }
-
 @media (max-width: 1024px) {
   #s2-message-0,
   #s2-message-1,
@@ -59,12 +54,14 @@ invisible {
     font-weight: 900;
   }
 }
-
-@media (min-width: 1025px) {
+@media (max-width: 640px) {
+  .s2-display-none {
+    display: flex;
+  }
   #s2-message-0,
   #s2-message-1,
   #s2-message-2 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 900;
   }
 }

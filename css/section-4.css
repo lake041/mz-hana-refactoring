@@ -5,7 +5,6 @@
 .section-4-img {
   width: 32px;
 }
-
 @media (min-width: 1025px) {
   /* section-4 */
   .section-4-message {
@@ -15,7 +14,6 @@
     display: none;
   }
 }
-
 @media (max-width: 1024px) {
   .section-4-message {
     font-size: 2rem;
@@ -24,7 +22,6 @@
     display: none;
   }
 }
-
 @media (max-width: 640px) {
   #s4-0,
   #s4-1,

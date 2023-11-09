@@ -1,0 +1,49 @@
+.s-5-video {
+  height: 100%;
+  opacity: 0;
+}
+#sticky-box-5 {
+  height: 100%;
+}
+#message-z5 {
+  top: 40vh;
+  font-size: 2.7rem;
+}
+#message-a5 {
+  top: 53vh;
+  font-size: 7rem;
+  line-height: 1.6;
+}
+#s5-0,
+#s5-1 {
+  text-align: center;
+}
+
+@media (min-width: 1025px) {
+  .s-5-dp-none {
+    display: none;
+  }
+  #message-z5 {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  #message-z5 {
+    font-size: 3rem;
+  }
+  #message-a5 {
+    margin-top: 1rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 640px) {
+  #message-z5 {
+    font-size: 3rem;
+  }
+  #message-a5 {
+    margin-top: 1rem;
+    line-height: 1.2;
+  }
+}

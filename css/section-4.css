@@ -1,0 +1,45 @@
+.section-4-img-box {
+  width: 32px;
+  height: 32px;
+}
+.section-4-img {
+  width: 32px;
+}
+
+@media (min-width: 1025px) {
+  /* section-4 */
+  .section-4-message {
+    font-size: 3rem;
+  }
+  .s-4-dp-none {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-4-message {
+    font-size: 2rem;
+  }
+  .s-4-dp-none {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  #s4-0,
+  #s4-1,
+  #s4-2,
+  #s4-3,
+  #s4-4,
+  #s4-5,
+  #s4-6,
+  #s4-7 {
+    font-size: 1.5rem;
+  }
+  .s-4-dp-none {
+    display: inline-block;
+  }
+  .section-4-message {
+    font-size: 1.5rem;
+  }
+}

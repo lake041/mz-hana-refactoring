@@ -1,0 +1,241 @@
+@media (min-width: 1025px) {
+  #scroll-section-0 h1 {
+    font-size: 9vw;
+  }
+  .main-message {
+    font-size: 4vw;
+  }
+  .main-message small {
+    font-size: 1.5vw;
+  }
+  .hero-message {
+    font-size: 6vw;
+  }
+  .mid-message {
+    width: 1000px;
+    padding: 0;
+    font-size: 4vw;
+  }
+  /* section-3 */
+  .home-card-2 {
+    padding: 40px;
+    justify-content: center;
+  }
+  .home-card-2-title {
+    font-size: 3rem;
+  }
+  .home-card-2-desc {
+    font-size: 1.5rem;
+  }
+  #s3-inside-box-0 {
+    width: 36%;
+    margin-left: auto;
+  }
+  #s3-0 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history1.png);
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  #s3-inside-box-1 {
+    width: 36%;
+    margin-left: auto;
+  }
+  #s3-1 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history2.png);
+    justify-content: flex-end;
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #s3-inside-box-2 {
+    width: 36%;
+    margin-left: auto;
+  }
+  #s3-2 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history3.png);
+    justify-content: flex-end;
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #s3-inside-box-3 {
+    width: 36%;
+    margin-left: auto;
+  }
+  #s3-3 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history4.png);
+    justify-content: flex-end;
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* section-8 */
+  .n-s-8 {
+    width: 100%;
+  }
+  .n-s-8-card-box {
+    max-width: 900px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .n-s-8-card {
+    width: 400px;
+    height: 600px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 641px) {
+  .home-card-2 {
+    top: 15vh;
+  }
+
+  /* section-3 */
+  .home-card-2 {
+    padding: 40px;
+    justify-content: center;
+  }
+  .home-card-2-title {
+    font-size: 2.5rem;
+  }
+  .home-card-2-desc {
+    font-size: 1.5rem;
+  }
+  #s3-inside-box-0 {
+    width: 60%;
+    margin-left: auto;
+  }
+  #s3-0 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history1.png);
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #s3-inside-box-1 {
+    width: 60%;
+    margin-left: auto;
+  }
+  #s3-1 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history2.png);
+    justify-content: flex-end;
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #s3-inside-box-2 {
+    width: 60%;
+    margin-left: auto;
+  }
+  #s3-2 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history3.png);
+    justify-content: flex-end;
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #s3-inside-box-3 {
+    width: 60%;
+    margin-left: auto;
+  }
+  #s3-3 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history4.png);
+    justify-content: flex-end;
+    top: 15vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .n-s-8-card {
+    margin: 0 10px;
+    width: 40%;
+    max-height: 480px;
+  }
+}
+@media (max-width: 640px) {
+  .home-card-2 {
+    justify-content: flex-start;
+    width: 90%;
+    height: 75vh;
+    padding: 32px;
+  }
+
+  #s3-inside-box-0 {
+    width: 100%;
+    margin-left: 0;
+  }
+  #s3-0 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history1-mobile.png);
+    justify-content: flex-start;
+    top: 15vh;
+    width: 80%;
+  }
+
+  #s3-inside-box-1 {
+    width: 100%;
+    margin-left: 0;
+  }
+  #s3-1 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history2-mobile.png);
+    align-items: flex-end;
+    top: 15vh;
+    width: 80%;
+  }
+
+  #s3-inside-box-2 {
+    width: 100%;
+    margin-left: 0;
+  }
+  #s3-2 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history3-mobile.png);
+    align-items: flex-end;
+    top: 15vh;
+    width: 80%;
+  }
+
+  #s3-inside-box-3 {
+    width: 100%;
+    margin-left: 0;
+    height: fit-content;
+    /* 얘만 높이값이 이상함... ㅜㅜ?? */
+  }
+  #s3-3 {
+    background-image: url(https://static.toss.im/homepage-static/newtoss/history4-mobile.png);
+    top: 15vh;
+    width: 80%;
+    align-items: flex-end;
+  }
+
+  /* section-8 */
+  .n-s-8-card-box {
+    flex-direction: column;
+    height: 940px;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .n-s-8-card {
+    width: 88%;
+    height: 450px;
+    margin: 0 auto;
+  }
+  .n-s-8-title {
+    font-size: 3rem;
+  }
+}

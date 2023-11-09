@@ -1,0 +1,70 @@
+.s2-message-box {
+  top: 50vh;
+  margin: auto;
+  width: 100%;
+  height: 10vh;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+.s2-message-box p {
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+#s2-message-box-0,
+#s2-message-box-1,
+#s2-message-box-2 {
+  top: 40vh;
+}
+.s2-gradation-0 {
+  background: #121fcf;
+  background: linear-gradient(to top right, #8dc191 0%, #29aea9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.s2-gradation-1 {
+  background: #121fcf;
+  background: linear-gradient(to top right, #ed6a9e 0%, #e90061 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+visible,
+invisible {
+  font-weight: 900;
+}
+invisible {
+  color: transparent;
+}
+.s2-display-none {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .s2-display-none {
+    display: flex;
+  }
+  #s2-message-0,
+  #s2-message-1,
+  #s2-message-2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+}
+
+@media (max-width: 1024px) {
+  #s2-message-0,
+  #s2-message-1,
+  #s2-message-2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+}
+
+@media (min-width: 1025px) {
+  #s2-message-0,
+  #s2-message-1,
+  #s2-message-2 {
+    font-size: 5rem;
+    font-weight: 900;
+  }
+}

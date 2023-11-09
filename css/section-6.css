@@ -1,0 +1,55 @@
+.home-card-3 {
+  top: 20vh;
+  text-align: center;
+}
+#message-z6 {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+#message-a6,
+#message-b6 {
+  margin-top: -5vh;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#s6-0,
+#s6-1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (min-width: 1025px) {
+  .main-message {
+    font-size: 4vw;
+  }
+  .main-message small {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 1024px) {
+  #s6-0,
+  #s6-1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+@media (max-width: 640px) {
+  #s6-0,
+  #s6-1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  #message-a6,
+  #message-b6 {
+    margin-top: 20px;
+  }
+}

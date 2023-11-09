@@ -8,9 +8,11 @@
 }
 .container {
   overflow-x: hidden;
+  background-color: #000000;
 }
 .scroll-section {
   position: relative;
+  background-color: transparent;
 }
 .fixed-box {
   top: 0;

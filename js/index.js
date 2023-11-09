@@ -145,10 +145,10 @@
       scrollHeight: 0,
       objs: {
         k: document.querySelector(".container"),
-        v: document.querySelector(".s-5-video"),
+        v: document.querySelector(".s5-video"),
         container: document.querySelector("#scroll-section-5"),
-        z: document.querySelector("#scroll-section-5 .main-message.z"),
-        a: document.querySelector("#scroll-section-5 .main-message.a"),
+        z: document.querySelector("#s5-message-0"),
+        a: document.querySelector("#s5-message-1"),
       },
       values: {
         z_color: [0, 255, { start: 0.35, end: 0.5 }, 255, 255, { start: 0.5, end: 0.5 }],

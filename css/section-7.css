@@ -8,9 +8,6 @@
   height: 100%;
   /* transform: translate3d(50%, 50%, 0); */
 }
-.tossteam-video {
-  height: 40vh;
-}
 .s7-message-box {
   top: 50vh;
   margin: auto;
@@ -57,7 +54,6 @@
 #s7-message-box-1 {
   top: 42vh;
 }
-
 @media (min-width: 1025px) {
   #s7-message-0 {
     font-size: 3rem;
@@ -73,7 +69,6 @@
     margin-top: 0px;
   }
 }
-
 @media (max-width: 1024px) {
   #s7-message-0 {
     font-size: 2.5rem;
@@ -92,7 +87,6 @@
     margin-top: 10px;
   }
 }
-
 @media (max-width: 640px) {
   #s7-message-0 {
     font-size: 2rem;
@@ -108,7 +102,6 @@
     top: 35vh;
   }
 }
-
 @media (max-width: 375px) {
   .s7-button-box {
     margin-top: 20px;

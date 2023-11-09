@@ -185,10 +185,10 @@
       heightNum: 5,
       scrollHeight: 0,
       objs: {
-        v: document.querySelector(".s-7-video"),
+        v: document.querySelector(".s7-video"),
         container: document.querySelector("#scroll-section-7"),
-        a: document.querySelector("#scroll-section-7 .main-message.a"),
-        b: document.querySelector("#scroll-section-7 .main-message.b"),
+        a: document.querySelector("#s7-message-box-0"),
+        b: document.querySelector("#s7-message-box-1"),
       },
       values: {
         a_opacity: [0, 1, { start: 0.1, end: 0.15 }, 1, 0, { start: 0.75, end: 0.85 }],

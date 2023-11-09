@@ -8,6 +8,7 @@
 }
 .container {
   overflow-x: hidden;
+  background-color: #000000;
 }
 .scroll-section {
   position: relative;

@@ -1,36 +1,35 @@
-#sticky-box-7 {
+.s7-video-box {
   height: 100%;
+  position: relative;
+  margin: auto;
 }
-.s-7-video {
+.s7-video {
   opacity: 0;
   height: 100%;
   /* transform: translate3d(50%, 50%, 0); */
 }
-#king-7-1 {
-  font-weight: 900;
+.s7-message-box {
+  top: 50vh;
+  margin: auto;
+  height: 10vh;
   font-size: 2.5rem;
-  line-height: 1.6;
+  opacity: 0;
 }
-#king-7-2 {
-  font-weight: 900;
-  font-size: 2.5rem;
-  line-height: 1.6;
+.s7-message-box p {
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+  margin: auto;
+  color: #ffffff;
 }
-#king-7-3 {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.section-7-button-box {
+.s7-button-box {
   margin-top: -5vh;
   display: flex;
   justify-content: center;
 }
-.section-7-button-img {
-  width: 1.3rem;
-  margin-right: 0.5rem;
-}
-#king-7-4 {
+.s7-button {
+  background-color: #ffffff;
+  color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,80 +38,72 @@
   border-radius: 42px;
   padding: 12px 20px;
 }
-#message-a7,
-#message-b7 {
+.s7-button-img {
+  width: 1.3rem;
+  margin-right: 0.5rem;
+}
+#s7-message-box-0,
+#s7-message-box-1 {
   box-sizing: border-box;
   margin-top: 17vh;
   padding: 18px 32px;
 }
-#message-a7 {
+#s7-message-box-0 {
   top: 20vh;
 }
-#message-b7 {
+#s7-message-box-1 {
   top: 42vh;
 }
-.s-7-video-box {
-  height: 100%;
-  position: relative;
-  margin: auto;
-}
-.tossteam-video {
-  height: 40vh;
-}
-
 @media (min-width: 1025px) {
-  #s7-0 {
+  #s7-message-0 {
     font-size: 3rem;
   }
-  #s7-1 {
+  #s7-message-1 {
     font-size: 4rem;
   }
-  #s7-2 {
+  #s7-message-2 {
     margin-top: 1rem;
     font-size: 2rem;
   }
-  .section-7-button-box {
+  .s7-button-box {
     margin-top: 0px;
   }
 }
-
 @media (max-width: 1024px) {
-  #s7-0 {
+  #s7-message-0 {
     font-size: 2.5rem;
   }
-  #s7-1 {
+  #s7-message-1 {
     font-size: 3rem;
   }
-  #s7-2 {
+  #s7-message-2 {
     margin-top: 0.5rem;
     font-size: 1.5rem;
   }
-  #message-b7 {
+  #s7-message-box-1 {
     top: 37vh;
   }
-  .section-7-button-box {
+  .s7-button-box {
     margin-top: 10px;
   }
 }
-
 @media (max-width: 640px) {
-  #s7-0 {
+  #s7-message-0 {
     font-size: 2rem;
   }
-  #s7-1 {
+  #s7-message-1 {
     font-size: 2.5rem;
   }
-  #s7-2 {
+  #s7-message-2 {
     margin-top: 0.7rem;
     font-size: 1.2rem;
   }
-  #message-b7 {
+  #s7-message-box-1 {
     top: 35vh;
   }
 }
-
 @media (max-width: 375px) {
-  .section-7-button-box {
+  .s7-button-box {
     margin-top: 20px;
   }
 }

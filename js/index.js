@@ -8,16 +8,15 @@
   let rafId;
   let rafState;
 
-  // Scene Information
   const sceneInfo = [
     {
-      // 0
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
       videoImageCount: 480,
+      imageSequence: [1, 480],
       // videoImageCount: 520,
-      imageSequence: [1, 520],
+      // imageSequence: [1, 520],
       objs: {
         z: document.querySelector("#s0-message-box-0"),
         a: document.querySelector("#s0-message-box-1"),
@@ -44,9 +43,7 @@
         v_opacity: [1, 0, { start: 0.9, end: 1 }, 0, 0, { start: 1, end: 1 }],
       },
     },
-
     {
-      // 1
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -65,9 +62,7 @@
         b_transfo: [20, 0, { start: 0.5, end: 0.7 }, 0, -20, { start: 0.8, end: 0.9 }],
       },
     },
-
     {
-      // 2
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -86,19 +81,17 @@
         b_transfo: [50, 0, { start: 0.65, end: 0.8 }, 0, 0, { start: 0.9, end: 0.95 }],
       },
     },
-
     {
-      // 3
       type: "sticky",
       heightNum: 8,
       scrollHeight: 0,
       objs: {
         k: document.querySelector(".container"),
         container: document.querySelector("#scroll-section-3"),
-        z: document.querySelector("#scroll-section-3 .card-message.z"),
-        a: document.querySelector("#scroll-section-3 .card-message.a"),
-        b: document.querySelector("#scroll-section-3 .card-message.b"),
-        c: document.querySelector("#scroll-section-3 .card-message.c"),
+        z: document.querySelector("#s3-card-box-0"),
+        a: document.querySelector("#s3-card-box-1"),
+        b: document.querySelector("#s3-card-box-2"),
+        c: document.querySelector("#s3-card-box-3"),
       },
       values: {
         z_opacity: [0, 1, { start: 0, end: 0.05 }, 1, 0, { start: 0.2, end: 0.22 }],
@@ -112,22 +105,20 @@
         k_background: [0, 255, { start: 0.8, end: 0.95 }, 255, 255, { start: 0.95, end: 0.95 }],
       },
     },
-
     {
-      // 4
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
       objs: {
         container: document.querySelector("#scroll-section-4"),
-        a: document.querySelector("#scroll-section-4 .main-message.a"),
-        b: document.querySelector("#scroll-section-4 .main-message.b"),
-        c: document.querySelector("#scroll-section-4 .main-message.c"),
-        d: document.querySelector("#scroll-section-4 .main-message.d"),
-        e: document.querySelector("#scroll-section-4 .main-message.e"),
-        f: document.querySelector("#scroll-section-4 .main-message.f"),
-        g: document.querySelector("#scroll-section-4 .main-message.g"),
-        h: document.querySelector("#scroll-section-4 .main-message.h"),
+        a: document.querySelector("#s4-message-0"),
+        b: document.querySelector("#s4-message-1"),
+        c: document.querySelector("#s4-message-2"),
+        d: document.querySelector("#s4-message-3"),
+        e: document.querySelector("#s4-message-4"),
+        f: document.querySelector("#s4-message-5"),
+        g: document.querySelector("#s4-message-6"),
+        h: document.querySelector("#s4-message-7"),
       },
       values: {
         a_opacity: [0, 1, { start: 0, end: 0.13 }, 1, 0, { start: 0.13, end: 0.24 }],
@@ -148,18 +139,16 @@
         h_transfo: [300, 0, { start: 0.56, end: 0.69 }, 0, -300, { start: 0.69, end: 0.81 }],
       },
     },
-
     {
-      // 5
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
       objs: {
         k: document.querySelector(".container"),
-        v: document.querySelector(".s-5-video"),
+        v: document.querySelector(".s5-video"),
         container: document.querySelector("#scroll-section-5"),
-        z: document.querySelector("#scroll-section-5 .main-message.z"),
-        a: document.querySelector("#scroll-section-5 .main-message.a"),
+        z: document.querySelector("#s5-message-0"),
+        a: document.querySelector("#s5-message-1"),
       },
       values: {
         z_color: [0, 255, { start: 0.35, end: 0.5 }, 255, 255, { start: 0.5, end: 0.5 }],
@@ -172,17 +161,15 @@
         k_background: [255, 0, { start: 0.8, end: 0.95 }, 0, 0, { start: 0.95, end: 0.95 }],
       },
     },
-
     {
-      // 6
       type: "sticky",
       heightNum: 3,
       scrollHeight: 0,
       objs: {
         container: document.querySelector("#scroll-section-6"),
-        z: document.querySelector("#scroll-section-6 .card-message.z"),
-        a: document.querySelector("#scroll-section-6 .main-message.a"),
-        b: document.querySelector("#scroll-section-6 .main-message.b"),
+        z: document.querySelector(".s6-image-box"),
+        a: document.querySelector("#s6-message-box-0"),
+        b: document.querySelector("#s6-message-box-1"),
       },
       values: {
         z_opacity: [0, 1, { start: 0, end: 0.05 }, 1, 0, { start: 0.9, end: 0.95 }],
@@ -193,16 +180,15 @@
         b_transfo: [50, 0, { start: 0.55, end: 0.6 }, 0, 0, { start: 0.9, end: 0.95 }],
       },
     },
-
     {
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
       objs: {
-        v: document.querySelector(".s-7-video"),
+        v: document.querySelector(".s7-video"),
         container: document.querySelector("#scroll-section-7"),
-        a: document.querySelector("#scroll-section-7 .main-message.a"),
-        b: document.querySelector("#scroll-section-7 .main-message.b"),
+        a: document.querySelector("#s7-message-box-0"),
+        b: document.querySelector("#s7-message-box-1"),
       },
       values: {
         a_opacity: [0, 1, { start: 0.1, end: 0.15 }, 1, 0, { start: 0.75, end: 0.85 }],

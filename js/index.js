@@ -167,9 +167,9 @@
       scrollHeight: 0,
       objs: {
         container: document.querySelector("#scroll-section-6"),
-        z: document.querySelector("#scroll-section-6 .card-message.z"),
-        a: document.querySelector("#scroll-section-6 .main-message.a"),
-        b: document.querySelector("#scroll-section-6 .main-message.b"),
+        z: document.querySelector(".s6-image-box"),
+        a: document.querySelector("#s6-message-box-0"),
+        b: document.querySelector("#s6-message-box-1"),
       },
       values: {
         z_opacity: [0, 1, { start: 0, end: 0.05 }, 1, 0, { start: 0.9, end: 0.95 }],

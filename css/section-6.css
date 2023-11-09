@@ -1,3 +1,30 @@
+.s6-image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -15vh;
+  height: 100%;
+  opacity: 0;
+}
+.s6-image-box img {
+  top: 20vh;
+  max-width: 80vw;
+}
+.s6-message-box {
+  top: 50vh;
+  margin: auto;
+  height: 10vh;
+  font-size: 2.5rem;
+  opacity: 0;
+}
+.s6-message-box p {
+  margin: auto;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
 .card-message {
   display: flex;
   justify-content: center;
@@ -15,49 +42,24 @@
   justify-self: center;
   align-items: center;
 }
-#message-a6,
-#message-b6 {
-  margin-top: -5vh;
+#s6-message-box-0,
+#s6-message-box-1 {
   font-size: 1.2rem;
   font-weight: 600;
 }
-#s6-0,
-#s6-1 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.6;
-  text-align: center;
-}
-
-@media (min-width: 1025px) {
-  .main-message {
-    font-size: 4vw;
-  }
-  .main-message small {
-    font-size: 1.5vw;
-  }
-}
 @media (max-width: 1024px) {
-  #s6-0,
-  #s6-1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.6;
-    text-align: center;
+  .s6-message-box p {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 640px) {
-  #s6-0,
-  #s6-1 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.6;
-    text-align: center;
+  .s6-message-box p {
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 375px) {
-  #message-a6,
-  #message-b6 {
+  #s6-message-box-0,
+  #s6-message-box-1 {
     margin-top: 20px;
   }
 }

@@ -8,16 +8,15 @@
   let rafId;
   let rafState;
 
-  // Scene Information
   const sceneInfo = [
     {
-      // 0
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
       videoImageCount: 480,
+      imageSequence: [1, 480],
       // videoImageCount: 520,
-      imageSequence: [1, 520],
+      // imageSequence: [1, 520],
       objs: {
         z: document.querySelector("#s0-message-box-0"),
         a: document.querySelector("#s0-message-box-1"),
@@ -44,9 +43,7 @@
         v_opacity: [1, 0, { start: 0.9, end: 1 }, 0, 0, { start: 1, end: 1 }],
       },
     },
-
     {
-      // 1
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -65,9 +62,7 @@
         b_transfo: [20, 0, { start: 0.5, end: 0.7 }, 0, -20, { start: 0.8, end: 0.9 }],
       },
     },
-
     {
-      // 2
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -86,9 +81,7 @@
         b_transfo: [50, 0, { start: 0.65, end: 0.8 }, 0, 0, { start: 0.9, end: 0.95 }],
       },
     },
-
     {
-      // 3
       type: "sticky",
       heightNum: 8,
       scrollHeight: 0,
@@ -112,9 +105,7 @@
         k_background: [0, 255, { start: 0.8, end: 0.95 }, 255, 255, { start: 0.95, end: 0.95 }],
       },
     },
-
     {
-      // 4
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -148,9 +139,7 @@
         h_transfo: [300, 0, { start: 0.56, end: 0.69 }, 0, -300, { start: 0.69, end: 0.81 }],
       },
     },
-
     {
-      // 5
       type: "sticky",
       heightNum: 5,
       scrollHeight: 0,
@@ -172,9 +161,7 @@
         k_background: [255, 0, { start: 0.8, end: 0.95 }, 0, 0, { start: 0.95, end: 0.95 }],
       },
     },
-
     {
-      // 6
       type: "sticky",
       heightNum: 3,
       scrollHeight: 0,
@@ -193,7 +180,6 @@
         b_transfo: [50, 0, { start: 0.55, end: 0.6 }, 0, 0, { start: 0.9, end: 0.95 }],
       },
     },
-
     {
       type: "sticky",
       heightNum: 5,

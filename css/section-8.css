@@ -1,39 +1,45 @@
-.n-s-8-box {
-  margin: auto;
+.s8-normal-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
 }
-.n-s-8 {
+.s8-container {
   width: 100%;
-  margin: auto;
+  max-width: 1000px;
+  margin: 100px 0;
   display: flex;
+  gap: 60px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
 }
-.n-s-8-title {
-  font-size: 4rem;
-  font-weight: 800;
+.s8-title-box {
   text-align: center;
   line-height: 1.4;
-  margin: 95px 0 60px 0;
 }
-.n-s-8-card-box {
+.s8-title-box p {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #000000;
+}
+.s8-card-box {
   width: 100%;
   display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }
-.n-s-8-card {
+.s8-card {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: auto;
-  height: 450px;
+  height: 600px;
+  width: 400px;
   border-radius: 24px;
   position: relative;
   padding: 64px 20px;
@@ -41,27 +47,33 @@
   background-repeat: no-repeat;
   box-sizing: border-box;
 }
-.n-s-8-bg-1 {
+.s8-card-0-bg {
   background-image: url(https://static.toss.im/homepage-static/newtoss/select-card/my-challenge-bg-mobile.png);
 }
-.n-s-8-bg-2 {
+.s8-card-1-bg {
   background-image: url(https://static.toss.im/homepage-static/newtoss/outro-campaign-banner-temp.png);
 }
-.n-s-8-card-title {
+.s8-card-title-box {
+  margin-bottom: 15px;
+}
+.s8-card-title-box p {
+  color: #ffffff;
   font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 15px;
 }
-.n-s-8-card-desc {
-  font-size: 1.5rem;
-  font-weight: 600;
+.s8-card-desc-box {
   width: 100%;
-  text-align: center;
   margin-bottom: 24px;
 }
-.n-s-8-button {
-  display: inline-flex;
+.s8-card-desc-box p {
+  color: #aaa;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.s8-card-button {
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;

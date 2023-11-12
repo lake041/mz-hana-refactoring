@@ -59,7 +59,49 @@ MZ 하나은행은 2023년 5월 한 달 동안 진행했던 프로젝트로, 나
 </html>
 ```
 
-- 모든 요소를 컴포넌트화 하여 index.html을 28줄로 깔끔하게 정리했다.
+```bash
+assets
+ ┣ images
+ ┣ sequence
+css
+ ┣ default.css
+ ┣ footer.css
+ ┣ general.css
+ ┣ header.css
+ ┣ index.css
+ ┣ loading.css
+ ┣ section-0.css
+ ┣ section-1.css
+ ┣ section-2.css
+ ┣ section-3.css
+ ┣ section-4.css
+ ┣ section-5.css
+ ┣ section-6.css
+ ┣ section-7.css
+ ┗ section-8.css
+html
+ ┣ footer.html
+ ┣ header.html
+ ┣ loading.html
+ ┣ section-0.html
+ ┣ section-1.html
+ ┣ section-2.html
+ ┣ section-3.html
+ ┣ section-4.html
+ ┣ section-5.html
+ ┣ section-6.html
+ ┣ section-7.html
+ ┗ section-8.html
+js
+ ┣ animate.js
+ ┣ include-html.js
+ ┗ index.js
+ .gitignore
+ index.html
+ README.md
+```
+
+- 모든 HTML/CSS을 섹션 및 기능별로 컴포넌트화 하여 index.html을 28줄로 깔끔하게 정리했다.
 - 불필요하거나 중복되는 HTML/CSS를 제거하고, 통합했다.
 - CSS 네이밍 컨벤션을 통일하고 직관적인 네이밍으로 수정했다.
 

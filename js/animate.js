@@ -1,6 +1,4 @@
 export const animate = () => {
-  console.log("animate start");
-
   let yOffset = 0; // window.pageYOffset 대신 쓸 변수
   let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
   let currentScene = 0; // 현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
@@ -315,10 +313,22 @@ export const animate = () => {
     }
     document.body.setAttribute("id", `show-scene-${currentScene}`);
 
-    const heightRatio = window.innerHeight / 720;
     const widthRatio = window.innerWidth / 1280;
-    const scaleRatio = Math.max(heightRatio, widthRatio)
+    const heightRatio = window.innerHeight / 720;
+    const scaleRatio = Math.max(widthRatio, heightRatio)
     sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${scaleRatio})`;
+
+    const s5video = document.querySelector(".s5-video");
+    const s5videoWidthRatio = window.innerWidth / 1920;
+    const s5videoHeightRatio = window.innerHeight / 1080;
+    const s5scaleRatio = Math.max(s5videoWidthRatio, s5videoHeightRatio);
+    s5video.style.transform = `translate3d(-50%, -50%, 0) scale(${s5scaleRatio})`;
+
+    const s7video = document.querySelector(".s7-video");
+    const s7videoWidthRatio = window.innerWidth / 1920;
+    const s7videoHeightRatio = window.innerHeight / 1080;
+    const s7scaleRatio = Math.max(s7videoWidthRatio, s7videoHeightRatio);
+    s7video.style.transform = `translate3d(-50%, -50%, 0) scale(${s7scaleRatio})`;  
   }
 
   // eventListner
@@ -397,7 +407,6 @@ export const animate = () => {
   }
 
   function onLoad() {
-    console.log("loaded");
     // 로드 되면 body의 before-load 클래스를 제거한다.
     document.body.classList.remove("before-load");
   
@@ -453,7 +462,6 @@ export const animate = () => {
     // 페이지가 아직 로드되지 않았다면, 로드 완료 시 실행할 이벤트 핸들러를 등록
     document.onreadystatechange = () => {
       if (document.readyState === "complete") {
-        console.log("x");
         onLoad();
       }
     };
@@ -483,9 +491,4 @@ export const animate = () => {
 
   setCanvasImages();
   initiate();
-
-
-
-
-  console.log("animate end");
 }

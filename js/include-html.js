@@ -9,7 +9,13 @@ export const includeHTML = async () => {
         const response = await fetch(file);
         if (response.status === 200) {
           const html = await response.text();
-          element.outerHTML = html;
+          const tagName = element.tagName;
+          if (tagName === "HEADER" || tagName === "FOOTER") {
+            element.innerHTML = html;
+            element.removeAttribute("include-html");
+          } else {
+            element.outerHTML = html;
+          }
         } else if (response.status === 404) {
           element.innerHTML = "페이지를 찾을 수 없습니다.";
         } else {

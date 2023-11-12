@@ -15,7 +15,6 @@ export const includeHTML = async () => {
         } else {
           console.log(response);
         }
-        // element.removeAttribute("include-html");
       } catch (error) {
         console.error("오류가 발생했습니다:", error);
       }

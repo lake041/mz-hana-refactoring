@@ -12,15 +12,47 @@ MZ 하나은행은 2023년 5월 한 달 동안 진행했던 프로젝트로, 나
 
 ### 1-3. 목표
 
-- HTML/CSS 컴포넌트화: include-html 함수를 활용하여 HTML과 CSS를 section별로 분할하여 가독성과 유지보수성을 높인다.
+- HTML/CSS 컴포넌트화: HTML과 CSS를 section 및 기타 기능별로 분할하여 컴포넌트화 한다.
 
 - JS 코드 분할: 레이아웃 및 애니메이션 함수를 기능별로 세분화하여 파일을 나누고, 각 기능에 대한 상세한 주석을 추가한다.
 
 ## 2. 리팩토링 결과
 
-### 1차 리팩토링: HTML/CSS
+### 1차 리팩토링: HTML/CSS 컴포넌트화
 
-- 불필요한 HTML 요소 제거
-- CSS 네이밍 컨벤션 통일 및 직관적인 네이밍 사용
-- 불필요하거나 중복되는 CSS 요소 재구성
-- 섹션별 CSS 파일 분할
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>모두의 금융, 하나은행</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body class="before-load">
+    <div include-html="./html/loading.html"></div>
+    <header include-html="./html/header.html"></header>
+    <main class="container">
+      <section include-html="./html/section-0.html"></section>
+      <section include-html="./html/section-1.html"></section>
+      <section include-html="./html/section-2.html"></section>
+      <section include-html="./html/section-3.html"></section>
+      <section include-html="./html/section-4.html"></section>
+      <section include-html="./html/section-5.html"></section>
+      <section include-html="./html/section-6.html"></section>
+      <section include-html="./html/section-7.html"></section>
+      <section include-html="./html/section-8.html"></section>
+    </main>
+    <footer include-html="./html/footer.html"></footer>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
+```
+
+- 모든 요소를 컴포넌트화 하여 index.html을 28줄로 깔끔하게 정리했다.
+- 불필요하거나 중복되는 HTML/CSS를 제거하고, 통합했다.
+- CSS 네이밍 컨벤션을 통일하고 직관적인 네이밍으로 수정했다.
+
+### 2차 리팩토링: JS 코드 분할

@@ -1,10 +1,9 @@
 let sceneInfo;
-let currentScene;
+let currentScene = 0;
 let yOffset;
 
 // 레이아웃 설정
 export const setLayout = () => {
-  console.log(1);
   // sceneInfo에 정의된 heightNum에 따라 실제 height와 scrollHeight를 설정한다.
   for (let i = 0; i < sceneInfo.length; i++) {
     if (sceneInfo[i].type === "sticky") {
@@ -70,9 +69,8 @@ const setTitleOpacity = () => {
   }
 };
 
-export const initiate = (sceneInfoParam, currentSceneParam) => {
+export const initiate = (sceneInfoParam) => {
   sceneInfo = sceneInfoParam;
-  currentScene = currentSceneParam;
 
   setLayout();
   setCanvasImages();

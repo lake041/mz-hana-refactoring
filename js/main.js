@@ -3,15 +3,15 @@ import { playAnimation, calcValues } from "./animate.js";
 import { initiate, setLayout } from "./initiate.js";
 
 export const main = () => {
-  let sceneInfo;
+  let sceneInfo; // 각 섹션별 애니메이션의 타이밍과 시작 및 목표값을 정의한 배열 값
   let yOffset = 0; // window.pageYOffset 대신 쓸 변수
   let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
   let currentScene = 0; // 현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
   let enterNewScene = false; // 새로운 scene이 시작된 순간 true
-  let acc = 0.2;
-  let delayedYOffset = 0;
-  let rafId;
-  let rafState;
+  let acc = 0.2; // delayedYOffset이 yOffset에 가까워지는 속도 값
+  let delayedYOffset = 0; // 부드러운 스크롤 효과를 주기 위해서 yOffset을 현재 스크롤 값으로 바로 반영하지 않고 천천히 증가시킨다.
+  let rafId; // requestAnimationFrame 함수가 반환하는 애니메이션 핸들
+  let rafState; // 현재 애니메이션이 진행 중인지 중지된 상태인지 나타내는 상태 값
 
   // local navigator의 sticky 속성을 설정한다.
   function checkNavSticky() {
@@ -28,17 +28,23 @@ export const main = () => {
     enterNewScene = false;
     prevScrollHeight = 0;
 
+    // currentScene 이전까지의 모든 scrollHeight 합
     for (let i = 0; i < currentScene; i++) {
       prevScrollHeight += sceneInfo[i].scrollHeight;
     }
-
+    
+    // scroll section 영역에서는 scroll section 요소들을 보이게 한다.
+    // .scroll-effect-end .fixed-box { display: none; }
     if (delayedYOffset < prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
       document.body.classList.remove("scroll-effect-end");
     }
 
+    // scrollHeight + currentScene의 scrollHeight보다
+    // delayedYOffset이 크다면 현재 scene을 벗어났다는 의미다.
     if (delayedYOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight) {
       enterNewScene = true;
-      if (currentScene === sceneInfo.length - 1) {
+    // scroll section이 모두 끝나면 scroll section 요소들을 안 보이게 한다.
+    if (currentScene === sceneInfo.length - 1) {
         document.body.classList.add("scroll-effect-end");
       }
       if (currentScene < sceneInfo.length - 1) {
@@ -61,6 +67,8 @@ export const main = () => {
   }
 
   function loop() {
+    // 부드러운 스크롤 효과를 주기 위해서 yOffset을 현재 스크롤 값으로 바로 반영하지 않고 천천히 증가시킨다.
+    // scroll할 때마다 scrollLoop => loop 계속 호출되므로 조금씩 더해지면서 yOffset에 가까워진다.
     delayedYOffset = delayedYOffset + (yOffset - delayedYOffset) * acc;
 
     if (!enterNewScene) {
@@ -69,7 +77,6 @@ export const main = () => {
         const currentYOffset = delayedYOffset - prevScrollHeight;
         const info = sceneInfo[currentScene];
         const objs = sceneInfo[currentScene].objs;
-        const values = sceneInfo[currentScene].values;
         let sequence = Math.round(calcValues(info.imageSequence, currentYOffset));
         if (objs.videoImages[sequence]) {
           objs.context.drawImage(objs.videoImages[sequence], 0, 0);
@@ -89,8 +96,11 @@ export const main = () => {
       let tempYOffset = yOffset;
       scrollTo(0, tempYOffset - 1);
     }
+    // requestAnimationFrame 함수가 반환하는 애니메이션 핸들을 저장한다.
+    // 이 변수를 통해 언제든지 애니메이션을 취소할 수 있다.
     rafId = requestAnimationFrame(loop);
 
+    // delayedOffset이 yOffset과 충분히 가까워져서 절댓값이 1보다 작으면 애니메이션을 취소한다. 
     if (Math.abs(yOffset - delayedYOffset) < 1) {
       cancelAnimationFrame(rafId);
       rafState = false;
@@ -103,7 +113,7 @@ export const main = () => {
     document.body.classList.remove("before-load");
   
     sceneInfo = setSceneInfo();
-    initiate(sceneInfo, currentScene);
+    initiate(sceneInfo);
     
     // 이미지 시퀀스 비디오가 있는 씬의 캔버스에 첫 장면 그려주기
     // 중간에서 새로고침 했을 경우 자동 스크롤로 제대로 그려주기

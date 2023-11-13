@@ -61,7 +61,7 @@
   line-height: 1.2;
   margin: auto;
 }
-.scroll-effect-end .sticky-elem {
+.scroll-effect-end .fixed-box {
   /* 스크롤 효과가 모두 끝나고, 아래 일반 콘텐츠 영역에서는 sticky-elem들을 모두 안보이도록 */
   display: none !important;
 }

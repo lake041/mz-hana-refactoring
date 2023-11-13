@@ -21,7 +21,7 @@ export function playAnimation(sceneInfoParam, currentSceneParam, yOffset, prevSc
 
 // animation
 // 각 스크롤섹션에서의 스크롤 비율 구하기
-function calcValues(values, currentYOffset) {
+export function calcValues(values, currentYOffset) {
   let rv;
   // 현재 씬(스크롤섹션)에서 스크롤된 범위를 비율로 구하기
   const scrollHeight = sceneInfo[currentScene].scrollHeight;

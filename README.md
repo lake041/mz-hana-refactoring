@@ -1,5 +1,13 @@
 # MZ 하나은행 리팩토링
 
+<img alt="Html" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/>
+<img alt="Css" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/>
+<img alt="JavaScript" src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/>
+
+https://lake041.github.io/mz-hana-refactoring/<br/>
+디지털 하나로 첫번째 과제, MZ 하나은행 리팩토링 프로젝트<br/>
+개발 기간: 23.11.08(수) ~ 23.11.13(월)
+
 ## 1. 프로젝트 배경
 
 ### 1-1. 리팩토링을 하는 이유

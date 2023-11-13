@@ -5,9 +5,6 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
-.before-load footer {
-  display: none;
-}
 .footer-outerbox {
   max-width: 1200px;
   width: 100%;

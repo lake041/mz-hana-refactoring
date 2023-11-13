@@ -1,4 +1,7 @@
+import { setSceneInfo } from "./scene-info.js";
+
 export const animate = () => {
+  let sceneInfo;
   let yOffset = 0; // window.pageYOffset 대신 쓸 변수
   let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
   let currentScene = 0; // 현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
@@ -7,198 +10,6 @@ export const animate = () => {
   let delayedYOffset = 0;
   let rafId;
   let rafState;
-
-  const sceneInfo = [
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      videoImageCount: 480,
-      imageSequence: [1, 480],
-      // videoImageCount: 520,
-      // imageSequence: [1, 520],
-      objs: {
-        z: document.querySelector("#s0-message-box-0"),
-        a: document.querySelector("#s0-message-box-1"),
-        b: document.querySelector("#s0-message-box-2"),
-        c: document.querySelector("#s0-message-box-3"),
-        d: document.querySelector("#s0-message-box-4"),
-        videoImages: [],
-        container: document.querySelector("#scroll-section-0"),
-        canvas: document.querySelector("#s0-video-canvas"),
-        v: document.querySelector("#s0-video-canvas"),
-        context: document.querySelector("#s0-video-canvas").getContext("2d"),
-      },
-      values: {
-        z_opacity: [1, 1, { start: 0, end: 0.03 }, 1, 0, { start: 0.05, end: 0.08 }],
-        z_transfo: [20, 0, { start: 0, end: 0.03 }, 0, -20, { start: 0.05, end: 0.08 }],
-        a_opacity: [0, 1, { start: 0.1, end: 0.2 }, 1, 0, { start: 0.25, end: 0.3 }],
-        a_transfo: [20, 0, { start: 0.1, end: 0.2 }, 0, -20, { start: 0.25, end: 0.3 }],
-        b_opacity: [0, 1, { start: 0.45, end: 0.5 }, 1, 0, { start: 0.85, end: 0.9 }],
-        b_transfo: [20, 0, { start: 0.45, end: 0.5 }, 0, -20, { start: 0.85, end: 0.9 }],
-        c_opacity: [0, 1, { start: 0.52, end: 0.57 }, 1, 0, { start: 0.85, end: 0.9 }],
-        c_transfo: [20, 0, { start: 0.52, end: 0.57 }, 0, -20, { start: 0.85, end: 0.9 }],
-        d_opacity: [0, 1, { start: 0.59, end: 0.64 }, 1, 0, { start: 0.85, end: 0.9 }],
-        d_transfo: [20, 0, { start: 0.59, end: 0.64 }, 0, -20, { start: 0.85, end: 0.9 }],
-        v_opacity: [1, 0, { start: 0.9, end: 1 }, 0, 0, { start: 1, end: 1 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      objs: {
-        container: document.querySelector("#scroll-section-1"),
-        z: document.querySelector("#s1-card-box-0"),
-        a: document.querySelector("#s1-card-box-1"),
-        b: document.querySelector("#s1-card-box-2"),
-      },
-      values: {
-        z_opacity: [0, 1, { start: 0, end: 0.2 }, 1, 0, { start: 0.8, end: 0.9 }],
-        z_transfo: [20, 0, { start: 0, end: 0.2 }, 0, -20, { start: 0.8, end: 0.9 }],
-        a_opacity: [0, 1, { start: 0.25, end: 0.45 }, 1, 0, { start: 0.8, end: 0.9 }],
-        a_transfo: [20, 0, { start: 0.25, end: 0.45 }, 0, -20, { start: 0.8, end: 0.9 }],
-        b_opacity: [0, 1, { start: 0.5, end: 0.7 }, 1, 0, { start: 0.8, end: 0.9 }],
-        b_transfo: [20, 0, { start: 0.5, end: 0.7 }, 0, -20, { start: 0.8, end: 0.9 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      objs: {
-        container: document.querySelector("#scroll-section-2"),
-        z: document.querySelector("#s2-message-box-0"),
-        a: document.querySelector("#s2-message-box-1"),
-        b: document.querySelector("#s2-message-box-2"),
-      },
-      values: {
-        z_opacity: [0, 1, { start: 0, end: 0.25 }, 1, 0, { start: 0.8, end: 0.85 }],
-        z_transfo: [350, 0, { start: 0, end: 0.25 }, 0, 0, { start: 0.8, end: 0.85 }],
-        a_opacity: [0, 1, { start: 0.35, end: 0.5 }, 1, 0, { start: 0.55, end: 0.6 }],
-        a_transfo: [50, 0, { start: 0.35, end: 0.5 }, 0, 0, { start: 0.55, end: 0.6 }],
-        b_opacity: [0, 1, { start: 0.65, end: 0.8 }, 1, 0, { start: 0.9, end: 0.95 }],
-        b_transfo: [50, 0, { start: 0.65, end: 0.8 }, 0, 0, { start: 0.9, end: 0.95 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 8,
-      scrollHeight: 0,
-      objs: {
-        k: document.querySelector(".container"),
-        container: document.querySelector("#scroll-section-3"),
-        z: document.querySelector("#s3-card-box-0"),
-        a: document.querySelector("#s3-card-box-1"),
-        b: document.querySelector("#s3-card-box-2"),
-        c: document.querySelector("#s3-card-box-3"),
-      },
-      values: {
-        z_opacity: [0, 1, { start: 0, end: 0.05 }, 1, 0, { start: 0.2, end: 0.22 }],
-        z_transfo: [1, 0, { start: 0, end: 0.05 }, 0, -1, { start: 0.2, end: 0.22 }],
-        a_opacity: [0, 1, { start: 0.25, end: 0.3 }, 1, 0, { start: 0.45, end: 0.47 }],
-        a_transfo: [1, 0, { start: 0.25, end: 0.3 }, 0, -1, { start: 0.45, end: 0.47 }],
-        b_opacity: [0, 1, { start: 0.5, end: 0.55 }, 1, 0, { start: 0.7, end: 0.72 }],
-        b_transfo: [1, 0, { start: 0.5, end: 0.55 }, 0, -1, { start: 0.7, end: 0.72 }],
-        c_opacity: [0, 1, { start: 0.75, end: 0.8 }, 1, 0, { start: 0.95, end: 0.97 }],
-        c_transfo: [1, 0, { start: 0.75, end: 0.8 }, 0, -1, { start: 0.95, end: 0.97 }],
-        k_background: [0, 255, { start: 0.8, end: 0.95 }, 255, 255, { start: 0.95, end: 0.95 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      objs: {
-        container: document.querySelector("#scroll-section-4"),
-        a: document.querySelector("#s4-message-0"),
-        b: document.querySelector("#s4-message-1"),
-        c: document.querySelector("#s4-message-2"),
-        d: document.querySelector("#s4-message-3"),
-        e: document.querySelector("#s4-message-4"),
-        f: document.querySelector("#s4-message-5"),
-        g: document.querySelector("#s4-message-6"),
-        h: document.querySelector("#s4-message-7"),
-      },
-      values: {
-        a_opacity: [0, 1, { start: 0, end: 0.13 }, 1, 0, { start: 0.13, end: 0.24 }],
-        a_transfo: [300, 0, { start: 0, end: 0.13 }, 0, -300, { start: 0.13, end: 0.24 }],
-        b_opacity: [0, 1, { start: 0.08, end: 0.21 }, 1, 0, { start: 0.21, end: 0.33 }],
-        b_transfo: [300, 0, { start: 0.08, end: 0.21 }, 0, -300, { start: 0.21, end: 0.33 }],
-        c_opacity: [0, 1, { start: 0.16, end: 0.29 }, 1, 0, { start: 0.29, end: 0.41 }],
-        c_transfo: [300, 0, { start: 0.16, end: 0.29 }, 0, -300, { start: 0.29, end: 0.41 }],
-        d_opacity: [0, 1, { start: 0.24, end: 0.37 }, 1, 0, { start: 0.37, end: 0.49 }],
-        d_transfo: [300, 0, { start: 0.24, end: 0.37 }, 0, -300, { start: 0.37, end: 0.49 }],
-        e_opacity: [0, 1, { start: 0.32, end: 0.45 }, 1, 0, { start: 0.45, end: 0.57 }],
-        e_transfo: [300, 0, { start: 0.32, end: 0.45 }, 0, -300, { start: 0.45, end: 0.57 }],
-        f_opacity: [0, 1, { start: 0.4, end: 0.53 }, 1, 0, { start: 0.53, end: 0.65 }],
-        f_transfo: [300, 0, { start: 0.4, end: 0.53 }, 0, -300, { start: 0.53, end: 0.65 }],
-        g_opacity: [0, 1, { start: 0.48, end: 0.61 }, 1, 0, { start: 0.61, end: 0.73 }],
-        g_transfo: [300, 0, { start: 0.48, end: 0.61 }, 0, -300, { start: 0.61, end: 0.73 }],
-        h_opacity: [0, 1, { start: 0.56, end: 0.69 }, 1, 0, { start: 0.69, end: 0.81 }],
-        h_transfo: [300, 0, { start: 0.56, end: 0.69 }, 0, -300, { start: 0.69, end: 0.81 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      objs: {
-        k: document.querySelector(".container"),
-        v: document.querySelector(".s5-video"),
-        container: document.querySelector("#scroll-section-5"),
-        z: document.querySelector("#s5-message-0"),
-        a: document.querySelector("#s5-message-1"),
-      },
-      values: {
-        z_color: [0, 255, { start: 0.35, end: 0.5 }, 255, 255, { start: 0.5, end: 0.5 }],
-        z_opacity: [0, 1, { start: 0, end: 0.25 }, 1, 0, { start: 0.8, end: 0.87 }],
-        z_transfo: [50, 0, { start: 0, end: 0.25 }, 0, 0, { start: 0.8, end: 0.87 }],
-        a_opacity: [0, 1, { start: 0.35, end: 0.5 }, 1, 0, { start: 0.8, end: 0.87 }],
-        a_transfo: [50, 0, { start: 0.35, end: 0.5 }, 0, 0, { start: 0.8, end: 0.87 }],
-        a_fontSize: [7, 4.5, { start: 0.35, end: 0.5 }, 4.5, 4.5, { start: 0.8, end: 0.87 }],
-        v_opacity: [0, 1, { start: 0.35, end: 0.5 }, 1, 0, { start: 0.8, end: 0.87 }],
-        k_background: [255, 0, { start: 0.8, end: 0.95 }, 0, 0, { start: 0.95, end: 0.95 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 3,
-      scrollHeight: 0,
-      objs: {
-        container: document.querySelector("#scroll-section-6"),
-        z: document.querySelector(".s6-image-box"),
-        a: document.querySelector("#s6-message-box-0"),
-        b: document.querySelector("#s6-message-box-1"),
-      },
-      values: {
-        z_opacity: [0, 1, { start: 0, end: 0.05 }, 1, 0, { start: 0.9, end: 0.95 }],
-        z_transfo: [50, 0, { start: 0, end: 0.05 }, 0, 0, { start: 0.9, end: 0.95 }],
-        a_opacity: [0, 1, { start: 0.1, end: 0.15 }, 1, 0, { start: 0.45, end: 0.5 }],
-        a_transfo: [50, 0, { start: 0.1, end: 0.15 }, 0, 0, { start: 0.45, end: 0.5 }],
-        b_opacity: [0, 1, { start: 0.55, end: 0.6 }, 1, 0, { start: 0.9, end: 0.95 }],
-        b_transfo: [50, 0, { start: 0.55, end: 0.6 }, 0, 0, { start: 0.9, end: 0.95 }],
-      },
-    },
-    {
-      type: "sticky",
-      heightNum: 5,
-      scrollHeight: 0,
-      objs: {
-        v: document.querySelector(".s7-video"),
-        container: document.querySelector("#scroll-section-7"),
-        a: document.querySelector("#s7-message-box-0"),
-        b: document.querySelector("#s7-message-box-1"),
-      },
-      values: {
-        a_opacity: [0, 1, { start: 0.1, end: 0.15 }, 1, 0, { start: 0.75, end: 0.85 }],
-        a_transfo: [50, 0, { start: 0.1, end: 0.15 }, 0, 0, { start: 0.75, end: 0.85 }],
-        b_opacity: [0, 1, { start: 0.2, end: 0.25 }, 1, 0, { start: 0.75, end: 0.85 }],
-        b_transfo: [50, 0, { start: 0.2, end: 0.25 }, 0, 0, { start: 0.75, end: 0.85 }],
-        v_opacity: [0, 1, { start: 0.15, end: 0.25 }, 1, 0, { start: 0.75, end: 0.85 }],
-      },
-    },
-  ];
 
   // animation
   // 각 스크롤섹션에서의 스크롤 비율 구하기
@@ -291,45 +102,6 @@ export const animate = () => {
     }
   }
 
-  function setLayout() {
-    for (let i = 0; i < sceneInfo.length; i++) {
-      if (sceneInfo[i].type === "sticky") {
-        sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
-      } else if (sceneInfo[i].type === "normal") {
-        sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight + window.innerHeight * 0.5;
-      }
-      sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
-    }
-
-    yOffset = window.scrollY;
-
-    let totalScrollHeight = 0;
-    for (let i = 0; i < sceneInfo.length; i++) {
-      totalScrollHeight += sceneInfo[i].scrollHeight;
-      if (totalScrollHeight >= yOffset) {
-        currentScene = i;
-        break;
-      }
-    }
-    document.body.setAttribute("id", `show-scene-${currentScene}`);
-
-    const widthRatio = window.innerWidth / 1280;
-    const heightRatio = window.innerHeight / 720;
-    const scaleRatio = Math.max(widthRatio, heightRatio)
-    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${scaleRatio})`;
-
-    const s5video = document.querySelector(".s5-video");
-    const s5videoWidthRatio = window.innerWidth / 1920;
-    const s5videoHeightRatio = window.innerHeight / 1080;
-    const s5scaleRatio = Math.max(s5videoWidthRatio, s5videoHeightRatio);
-    s5video.style.transform = `translate3d(-50%, -50%, 0) scale(${s5scaleRatio})`;
-
-    const s7video = document.querySelector(".s7-video");
-    const s7videoWidthRatio = window.innerWidth / 1920;
-    const s7videoHeightRatio = window.innerHeight / 1080;
-    const s7scaleRatio = Math.max(s7videoWidthRatio, s7videoHeightRatio);
-    s7video.style.transform = `translate3d(-50%, -50%, 0) scale(${s7scaleRatio})`;  
-  }
 
   // eventListner
   function scrollLoop() {
@@ -406,13 +178,82 @@ export const animate = () => {
     }
   }
 
+  // 레이아웃 설정
+  function setLayout() {
+    // sceneInfo에 정의된 heightNum에 따라 실제 height와 scrollHeight를 설정한다.
+    for (let i = 0; i < sceneInfo.length; i++) {
+      if (sceneInfo[i].type === "sticky") {
+        sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
+      } else if (sceneInfo[i].type === "normal") {
+        sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight + window.innerHeight * 0.5;
+      }
+      sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
+    }
+
+    yOffset = window.scrollY;
+
+    // totalScrollHeight을 계산해서 body에 currentScene을 설정한다.
+    let totalScrollHeight = 0;
+    for (let i = 0; i < sceneInfo.length; i++) {
+      totalScrollHeight += sceneInfo[i].scrollHeight;
+      if (totalScrollHeight >= yOffset) {
+        currentScene = i;
+        break;
+      }
+    }
+    document.body.setAttribute("id", `show-scene-${currentScene}`);
+
+    // 브라우저 비율에 따라 video scale 값을 조정한다.
+    const widthRatio = window.innerWidth / 1280;
+    const heightRatio = window.innerHeight / 720;
+    const scaleRatio = Math.max(widthRatio, heightRatio)
+    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${scaleRatio})`;
+
+    const s5video = document.querySelector(".s5-video");
+    const s5videoWidthRatio = window.innerWidth / 1920;
+    const s5videoHeightRatio = window.innerHeight / 1080;
+    const s5scaleRatio = Math.max(s5videoWidthRatio, s5videoHeightRatio);
+    s5video.style.transform = `translate3d(-50%, -50%, 0) scale(${s5scaleRatio})`;
+
+    const s7video = document.querySelector(".s7-video");
+    const s7videoWidthRatio = window.innerWidth / 1920;
+    const s7videoHeightRatio = window.innerHeight / 1080;
+    const s7scaleRatio = Math.max(s7videoWidthRatio, s7videoHeightRatio);
+    s7video.style.transform = `translate3d(-50%, -50%, 0) scale(${s7scaleRatio})`;  
+  }
+
+  // 이미지 시퀀스 로딩
+  function setCanvasImages() {
+    for (let i = 0; i < sceneInfo[0].videoImageCount; i++) {
+      const imgElem = new Image();
+      const sequenceNum = String(1 + i).padStart(3, "0");
+      imgElem.src = `./assets/sequence/${sequenceNum}.jpg`;
+      // imgElem.src = `./assets/sequence_high/${sequenceStr}.png`;
+      sceneInfo[0].objs.videoImages.push(imgElem);
+    }
+  }
+
+  // 첫 로딩 시 "MZ 하나은행" 투명도 조절
+  function initiate() {
+    yOffset = window.scrollY;
+    const title = document.querySelector("#s0-message-box-0");
+    if (title.style.opacity === 1) {
+      title.style.opacity = 0;
+    } else if (yOffset === 0) {
+      title.style.opacity = 1;
+    }
+  }
+
   function onLoad() {
     // 로드 되면 body의 before-load 클래스를 제거한다.
+    // .before-load .container => display: none; 
     document.body.classList.remove("before-load");
   
-    // 로드 되면 레이아웃을 그린다.
+    sceneInfo = setSceneInfo();
     setLayout();
-  
+    setCanvasImages();
+    initiate();
+    
     // 이미지 시퀀스 비디오가 있는 씬의 캔버스에 첫 장면 그려주기
     // 중간에서 새로고침 했을 경우 자동 스크롤로 제대로 그려주기
     let tempYOffset = yOffset;
@@ -466,29 +307,4 @@ export const animate = () => {
       }
     };
   }
-  
-  // 첫 로딩 시 "MZ 하나은행" 투명도 조절
-  function initiate() {
-    yOffset = window.scrollY;
-    const title = document.querySelector("#s0-message-box-0");
-    if (title.style.opacity === 1) {
-      title.style.opacity = 0;
-    } else if (yOffset === 0) {
-      title.style.opacity = 1;
-    }
-  }
-
-  // 이미지 시퀀스 로딩
-  function setCanvasImages() {
-    for (let i = 0; i < sceneInfo[0].videoImageCount; i++) {
-      const imgElem = new Image();
-      const sequenceNum = String(1 + i).padStart(3, "0");
-      imgElem.src = `./assets/sequence/${sequenceNum}.jpg`;
-      // imgElem.src = `./assets/sequence_high/${sequenceStr}.png`;
-      sceneInfo[0].objs.videoImages.push(imgElem);
-    }
-  }
-
-  setCanvasImages();
-  initiate();
 }

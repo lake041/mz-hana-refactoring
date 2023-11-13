@@ -111,7 +111,7 @@ js
  README.md
 ```
 
-- 기존 home.js를 기능에 따라 main.js, initiate.js, scroll.js, scene-info.js로 분할했다.
+- 기존 home.js를 기능에 따라 main.js, initiate.js, scroll.js, animate.js, scene-info.js로 분할했다.
 - 모든 함수와 변수에 대해 상세한 주석을 달았다.
 
 ### 느낀 점

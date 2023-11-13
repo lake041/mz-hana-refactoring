@@ -10,7 +10,7 @@ https://lake041.github.io/mz-hana-refactoring/<br/>
 
 ### 1-1. 리팩토링을 하는 이유
 
-MZ 하나은행은 2023년 5월 한 달 동안 진행했던 프로젝트로, 나의 첫 웹 개발 프로젝트였다. 당시 HTML/CSS/JS를 처음 배우는 단계에서 동시에 바로 시작된 프로젝트였기 때문에 굉장히 정신이 없었다. 기초를 배우기도 모자란 시간에 수준 높은 결과물을 뽑아내야만 했다. 그래서 클린 코드에 신경을 쓰지 못한 채로 얼기설기 프로젝트를 마무리했다. 다행히 결과물은 괜찮게 나와 전체 2등을 할 수 있었다. 하지만 6개월이 지난 지금까지도 가독성과 유지보수성을 무시하고 마구잡이로 작성했던 코드에 대한 일종의 양심의 가책을 느끼고 있다. 이러한 이유로 나의 첫 웹 프로젝트, MZ 하나은행을 리팩토링하기로 결심했다.
+MZ 하나은행은 2023년 5월 한 달 동안 진행했던 프로젝트로, 나의 첫 웹 개발 프로젝트였다. 당시 HTML/CSS/JS를 처음 배우는 단계에서 동시에 바로 시작된 프로젝트였기 때문에 굉장히 정신이 없었다. 기초를 배우기도 모자란 시간에 경쟁력 있는 결과물을 뽑아내야만 했다. 그래서 클린 코드에 신경을 쓰지 못한 채로 얼기설기 프로젝트를 마무리했다. 다행히 결과물은 괜찮게 나와 전체 2등을 할 수 있었다. 하지만 6개월이 지난 지금까지도 가독성과 유지보수성을 무시하고 마구잡이로 작성했던 코드에 대한 일종의 양심의 가책을 느끼고 있다. 이러한 이유로 나의 첫 웹 프로젝트, MZ 하나은행을 리팩토링하기로 결심했다.
 
 ### 1-2. 리팩토링 범위
 
@@ -47,8 +47,8 @@ MZ 하나은행은 2023년 5월 한 달 동안 진행했던 프로젝트로, 나
   </head>
   <body class="before-load">
     <div include-html="./html/loading.html"></div>
-    <header include-html="./html/header.html"></header>
     <main class="container">
+      <header include-html="./html/header.html"></header>
       <section include-html="./html/section-0.html"></section>
       <section include-html="./html/section-1.html"></section>
       <section include-html="./html/section-2.html"></section>
@@ -58,8 +58,8 @@ MZ 하나은행은 2023년 5월 한 달 동안 진행했던 프로젝트로, 나
       <section include-html="./html/section-6.html"></section>
       <section include-html="./html/section-7.html"></section>
       <section include-html="./html/section-8.html"></section>
+      <footer include-html="./html/footer.html"></footer>
     </main>
-    <footer include-html="./html/footer.html"></footer>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

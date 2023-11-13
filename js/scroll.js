@@ -67,7 +67,6 @@ export function scrollLoop(state) {
 }
 
 export function loop(state) {
-  console.log(state);
   let { sceneInfo, yOffset, currentScene, rafId, rafState } = state;
 
   // 부드러운 스크롤 효과를 주기 위해서 yOffset을 현재 스크롤 값으로 바로 반영하지 않고 천천히 증가시킨다.

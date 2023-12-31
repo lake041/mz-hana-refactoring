@@ -4,7 +4,7 @@
 
 디지털 하나로 첫번째 과제, MZ 하나은행 리팩토링 프로젝트<br/>
 개발 기간: 23.11.08(수) ~ 23.11.13(월)<br/>
-https://lake041.github.io/mz-hana-refactoring/<br/>
+https://oxboxx.github.io/mz-hana-refactoring/<br/>
 
 ## 1. 프로젝트 배경
 

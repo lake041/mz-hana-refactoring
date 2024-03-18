@@ -1,13 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>모두의 금융, 하나은행</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="before-load">
+    <div include-html="./html/loading.html"></div>
+    <main class="container">
+      <header include-html="./html/header.html"></header>
+      <section include-html="./html/section-0.html"></section>
+      <section include-html="./html/section-1.html"></section>
+      <section include-html="./html/section-2.html"></section>
+      <section include-html="./html/section-3.html"></section>
+      <section include-html="./html/section-4.html"></section>
+      <section include-html="./html/section-5.html"></section>
+      <section include-html="./html/section-6.html"></section>
+      <section include-html="./html/section-7.html"></section>
+      <section include-html="./html/section-8.html"></section>
+      <footer include-html="./html/footer.html"></footer>
+    </main>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
